@@ -3,603 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOOK TEST 2026 - SSF PERUMALABAD UNIT</title>
+    <title>Sahityolsav Management Portal</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Manrope & Noto Sans Malayalam -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- HTML5 QR Code Reader -->
-    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Manrope', 'Noto Sans Malayalam', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                            950: '#052e16',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #020617;
-            color: #f8fafc;
-            font-family: 'Manrope', 'Noto Sans Malayalam', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.6);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(51, 65, 85, 0.8);
-            border-radius: 9999px;
-        }
+        body { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="border-b border-slate-800 bg-slate-950/80 sticky top-0 z-40 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-slate-900 border border-brand-500/30 flex items-center justify-center p-1 shadow-lg shadow-brand-500/10">
-                    <img src="https://drive.google.com/thumbnail?id=1dzGtT_B1PV4yX2wP2ClQDwjSfYJ6I53r&sz=w200" alt="SSF Logo" class="w-full h-full object-contain rounded-full" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SSF&background=16a34a&color=fff';">
-                </div>
-                <div>
-                    <h1 class="font-extrabold text-sm sm:text-base tracking-wider text-white uppercase">BOOK TEST 2026</h1>
-                    <p class="text-[10px] sm:text-xs font-semibold text-brand-400">SSF PERUMALABAD UNIT</p>
-                </div>
-            </div>
-
-            <div id="header-user-status" class="flex items-center gap-2">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20">
-                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-                    Live Portal
-                </span>
-            </div>
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide">📚 Sahityolsav Portal</h1>
+            <nav class="mt-3 md:mt-0 flex gap-4">
+                <button onclick="switchTab('public')" class="px-3 py-1.5 rounded bg-indigo-700 hover:bg-indigo-800 text-sm font-medium transition">Public Portal</button>
+                <button onclick="switchTab('admin')" class="px-3 py-1.5 rounded bg-indigo-700 hover:bg-indigo-800 text-sm font-medium transition">Admin Dashboard</button>
+            </nav>
         </div>
     </header>
 
-    <!-- MAIN CONTAINER -->
-    <main class="max-w-6xl mx-auto px-4 py-6 w-full flex-1">
+    <!-- Main Container -->
+    <main class="container mx-auto px-4 py-6 flex-grow">
 
-        <!-- LOGGED OUT MAIN VIEW -->
-        <div id="portal-main-view" class="space-y-6">
-
-            <!-- HERO SECTION -->
-            <div class="glass-card rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden border border-brand-500/20 shadow-2xl">
-                <div class="max-w-2xl mx-auto space-y-4">
-                    <span class="px-3 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/30 rounded-full text-xs font-bold uppercase tracking-wider">
-                        ഷെയ്ഖ് ജീലാനി (റ) അനുസ്മരണ മത്സരം
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                        ബുക്ക് ടെസ്റ്റ് 2026
-                    </h2>
-                    <p class="text-slate-400 text-xs sm:text-sm font-medium">
-                        രചന: സയ്യിദ് സ്വലാഹുദ്ദീൻ ബുഖാരി
-                    </p>
-
-                    <!-- Shaikh Jeelani Facts Slider -->
-                    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 text-left relative overflow-hidden shadow-lg">
-                        <div class="flex items-center gap-2 text-brand-400 text-xs font-bold mb-2">
-                            <i class="fa-solid fa-book-open"></i>
-                            <span>ശൈഖ് ജീലാനി (റ) - അറിയേണ്ട കാര്യങ്ങൾ</span>
-                        </div>
-                        <div id="facts-slider-content" class="text-xs sm:text-sm text-slate-200 min-h-[50px] flex items-center transition-opacity duration-500 leading-relaxed font-medium">
-                            <!-- Dynamically updated -->
-                        </div>
-                    </div>
-
-                    <!-- Countdown Timer -->
-                    <div class="pt-2">
-                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3">ഓൺലൈൻ ടെസ്റ്റ് ആരംഭിക്കാൻ ഇനി</p>
-                        <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
-                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
-                                <span id="timer-days" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
-                                <span class="text-[10px] text-slate-400 uppercase font-bold">ദിവസം</span>
-                            </div>
-                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
-                                <span id="timer-hours" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
-                                <span class="text-[10px] text-slate-400 uppercase font-bold">മണിക്കൂർ</span>
-                            </div>
-                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
-                                <span id="timer-minutes" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
-                                <span class="text-[10px] text-slate-400 uppercase font-bold">മിനുട്ട്</span>
-                            </div>
-                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
-                                <span id="timer-seconds" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
-                                <span class="text-[10px] text-slate-400 uppercase font-bold">സെക്കൻഡ്</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Google Apps Script Sync Status Banner -->
+        <div id="sync-banner" class="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex justify-between items-center">
+            <div>
+                <p class="text-sm font-medium text-blue-800">Apps Script Sync Status: <span id="sync-status" class="font-bold">Connecting...</span></p>
+                <p class="text-xs text-blue-600 mt-0.5">URL: https://script.google.com/macros/s/AKfycbxukrFDbrY4IbmuTWCvu9s76sorYvnWEu6xSNWho9N37tnzIQHbHOYCJeiH60P9HDI/exec</p>
             </div>
-
-            <!-- SCANNER & LOGIN SECTION -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <!-- QR Scanner Box -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
-                    <div>
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg border border-brand-500/30">
-                                <i class="fa-solid fa-qrcode"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-bold text-white">ഹാൾ ടിക്കറ്റ് ക്യു.ആർ സ്കാനർ</h3>
-                                <p class="text-xs text-slate-400">Scan QR Code from Hall Ticket</p>
-                            </div>
-                        </div>
-
-                        <!-- Camera Scanner Area -->
-                        <div id="qr-reader-container" class="hidden mb-4 overflow-hidden rounded-xl border border-brand-500/40 bg-slate-950">
-                            <div id="reader" class="w-full"></div>
-                        </div>
-
-                        <button onclick="toggleScanner()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-camera"></i>
-                            <span id="scanner-btn-text">ക്യാമറ തുറന്ന് QR സ്കാൻ ചെയ്യുക</span>
-                        </button>
-                    </div>
-
-                    <!-- Password Login Form -->
-                    <form onsubmit="handleManualLogin(event)" class="space-y-3 bg-slate-900/60 p-4 rounded-xl border border-slate-700/60">
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">യൂസർ ഐ.ഡി (User ID)</label>
-                            <input type="text" id="login-userid" placeholder="User ID നൽകുക (e.g. BTG760)" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-brand-400 font-mono font-bold focus:outline-none focus:border-brand-500 uppercase">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">പാസ്‌വേഡ് (Password)</label>
-                            <div class="relative">
-                                <input type="password" id="login-pass" placeholder="പാസ്‌വേഡ് നൽകുക" required class="w-full bg-slate-800 border border-slate-700 rounded-lg pl-3 pr-10 py-2 text-xs text-white focus:outline-none focus:border-brand-500">
-                                <button type="button" onclick="togglePasswordVisibility('login-pass', 'login-pass-icon')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors">
-                                    <i id="login-pass-icon" class="fa-solid fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 rounded-lg transition-all shadow-md flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-right-to-bracket"></i> Student Login
-                        </button>
-                    </form>
-
-                    <div id="login-error-msg" class="mt-3 text-xs"></div>
-                </div>
-
-                <!-- Important Notes -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-2xl p-6 backdrop-blur-sm flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-sm font-bold text-slate-200 mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-circle-info text-brand-400"></i> ടെസ്റ്റ് നിബന്ധനകൾ & നിർദ്ദേശങ്ങൾ
-                        </h4>
-                        <ul class="space-y-2.5 text-xs text-slate-300">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-brand-400 mt-0.5"></i>
-                                <span>ഓൺലൈൻ ടെസ്റ്റ് <strong>2026 ഒക്ടോബർ 15 രാത്രി 8:00 മണിക്ക്</strong> കൃത്യമായി ആരംഭിക്കും.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-brand-400 mt-0.5"></i>
-                                <span>ഓഫ്‌ലൈൻ ടെസ്റ്റ് <strong>2026 ഒക്ടോബർ 17 വൈകുന്നേരം 3:00 മണിക്ക് മദ്രസത്തുൽ ഈമാൻ, എടക്കോം</strong> വച്ച് നടക്കും.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                        <div>
-                            <p class="text-[11px] text-slate-400">സഹായങ്ങൾക്ക് ബന്ധപ്പെടുക:</p>
-                            <a href="tel:7510645137" class="text-xs font-bold text-brand-400 hover:underline">
-                                <i class="fa-solid fa-phone mr-1"></i> 7510645137
-                            </a>
-                        </div>
-                        <span class="text-[10px] bg-slate-800 text-slate-400 px-2.5 py-1 rounded-full border border-slate-700">
-                            v2.6 Live Sync
-                        </span>
-                    </div>
-                </div>
-
-            </div>
-
+            <button onclick="syncWithAppsScript()" class="px-4 py-2 bg-blue-600 text-white text-xs font-semibold rounded hover:bg-blue-700 shadow">Sync Now</button>
         </div>
 
-        <!-- LOGGED IN USER DASHBOARD VIEW -->
-        <div id="portal-user-view" class="hidden space-y-6">
+        <!-- Public View -->
+        <div id="view-public" class="space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Live Point Board & Results</h2>
+                <div id="public-content" class="overflow-x-auto">
+                    <p class="text-gray-500 text-sm">ഡാറ്റ ലോഡ് ചെയ്യുന്നു...</p>
+                </div>
+            </div>
+        </div>
 
-            <div class="glass-card rounded-2xl p-6 border border-brand-500/30 flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-4 w-full md:w-auto">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-brand-500 bg-slate-900 flex items-center justify-center text-slate-600 text-2xl shadow-xl">
-                        <i class="fa-solid fa-user"></i>
+        <!-- Admin View -->
+        <div id="view-admin" class="hidden space-y-6">
+            <!-- Login Box -->
+            <div id="admin-login" class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Admin Login</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Username</label>
+                        <input type="text" id="admin-user" class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     </div>
                     <div>
-                        <div class="flex items-center gap-2">
-                            <span class="px-2 py-0.5 bg-brand-500/20 text-brand-400 border border-brand-500/30 rounded text-[10px] font-bold">VERIFIED CANDIDATE</span>
-                            <span id="user-display-id" class="text-xs font-mono text-slate-400 font-bold">BTG760</span>
-                        </div>
-                        <h2 id="user-display-name" class="text-lg sm:text-2xl font-black text-white">Candidate Name</h2>
-                        <p id="user-display-category" class="text-xs text-brand-400 font-semibold">Category</p>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Password</label>
+                        <input type="password" id="admin-pass" class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     </div>
-                </div>
-
-                <div class="flex items-center gap-2 w-full md:w-auto justify-end">
-                    <button onclick="handleLogout()" class="text-xs bg-slate-800 hover:bg-rose-600/80 text-slate-200 hover:text-white px-4 py-2.5 rounded-xl font-bold transition-all border border-slate-700 flex items-center gap-2">
-                        <i class="fa-solid fa-right-from-bracket"></i> Logout
-                    </button>
+                    <button onclick="handleAdminLogin()" class="w-full py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">Login</button>
+                    <p id="login-error" class="text-xs text-red-500 text-center hidden">Invalid Credentials!</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-                <!-- Official Hall Ticket View -->
-                <div class="lg:col-span-2 glass-card rounded-2xl p-6 border border-slate-800 relative overflow-hidden">
-                    <div class="border-b border-slate-800 pb-4 mb-4 flex items-center justify-between">
-                        <div>
-                            <h3 class="text-base font-extrabold text-white">OFFICIAL HALL TICKET</h3>
-                            <p class="text-xs text-brand-400">SHAIKH JEELANI (R) MEMORIAL COMPETITION 2026</p>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">USER ID</span>
-                            <span id="ht-userid" class="font-mono font-bold text-brand-400 text-sm">BTG760</span>
-                        </div>
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">NAME</span>
-                            <span id="ht-name" class="font-bold text-white text-sm">Candidate Name</span>
-                        </div>
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">PLACE</span>
-                            <span id="ht-place" class="font-semibold text-slate-200">Perumalabad</span>
-                        </div>
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">GENDER</span>
-                            <span id="ht-gender" class="font-semibold text-slate-200">Female</span>
-                        </div>
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 sm:col-span-2">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">CLASS / CATEGORY</span>
-                            <span id="ht-cat" class="font-semibold text-brand-400">7 Senior</span>
-                        </div>
-                    </div>
+            <!-- Admin Dashboard Panel (Hidden until login) -->
+            <div id="admin-dashboard" class="hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                    <h2 class="text-xl font-bold text-gray-800">Welcome, Admin</h2>
+                    <button onclick="handleAdminLogout()" class="px-4 py-2 bg-red-500 text-white text-xs font-semibold rounded hover:bg-red-600">Logout</button>
                 </div>
 
-                <!-- Reading Progress Tracker -->
-                <div class="glass-card rounded-2xl p-5 border border-slate-800">
-                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-book-bookmark text-brand-400"></i> വായനാ പുരോഗതി രേഖപ്പെടുത്തുക
-                    </h4>
-                    <form onsubmit="handleSaveReadingLog(event)" class="space-y-3">
-                        <div class="grid grid-cols-2 gap-2">
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">തീയതി</label>
-                                <input type="date" id="log-date" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">പേജുകൾ</label>
-                                <input type="text" id="log-pages" placeholder="e.g. 1 - 15" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
-                            </div>
-                        </div>
-                        <div>
-                            <textarea id="log-notes" rows="2" placeholder="പ്രധാന കുറിപ്പ്..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-2 rounded-lg">Save Entry</button>
-                    </form>
-
-                    <div class="mt-4 pt-3 border-t border-slate-800">
-                        <div id="reading-logs-container" class="space-y-2 max-h-52 overflow-y-auto text-xs"></div>
+                <!-- Backup & Restore Data (Protects against data loss on back-button/refresh) -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-md font-bold text-gray-800 mb-3">Data Backup & Recovery (Local Persistence)</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="exportDataJSON()" class="px-4 py-2 bg-green-600 text-white text-xs font-semibold rounded hover:bg-green-700">Export Backup JSON</button>
+                        <label class="px-4 py-2 bg-amber-600 text-white text-xs font-semibold rounded hover:bg-amber-700 cursor-pointer">
+                            Import Backup JSON <input type="file" id="import-file" class="hidden" onchange="importDataJSON(event)">
+                        </label>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
     </main>
 
-    <!-- FOOTER WITH SECRET ADMIN TRIPLE CLICK -->
-    <footer onclick="handleFooterClick()" class="border-t border-slate-800/80 bg-slate-950 py-6 mt-10 cursor-pointer select-none">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="text-xs text-slate-400 font-medium">© 2026 SSF PERUMALABAD UNIT. ALL RIGHTS RESERVED.</p>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-600 text-center py-4 border-t text-xs">
+        Sahityolsav Portal &copy; 2026. All rights reserved.
     </footer>
 
-    <!-- ADMIN PANEL OVERLAY MODAL -->
-    <div id="admin-view-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md hidden z-50 flex flex-col">
-        <div class="border-b border-slate-800 bg-slate-900/90 p-4 flex items-center justify-between">
-            <h3 class="font-black text-white text-sm">ADMIN CONTROL DASHBOARD</h3>
-            <button onclick="closeAdminDashboard()" class="text-slate-400 hover:text-white px-3 py-1.5 rounded-lg bg-slate-800 text-xs font-bold">Exit Admin</button>
-        </div>
-        <div class="flex-1 overflow-y-auto p-4 sm:p-6 max-w-7xl mx-auto w-full space-y-6">
-            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-xs">
-                        <thead>
-                            <tr class="bg-slate-950/80 text-slate-400 font-bold uppercase text-[10px] border-b border-slate-800">
-                                <th class="p-3.5">User ID</th>
-                                <th class="p-3.5">Name</th>
-                                <th class="p-3.5">Place</th>
-                                <th class="p-3.5">Gender</th>
-                                <th class="p-3.5">Category</th>
-                                <th class="p-3.5">Mobile</th>
-                                <th class="p-3.5">Password</th>
-                                <th class="p-3.5">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="admin-table-body" class="divide-y divide-slate-800/60 text-slate-300"></tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ADMIN LOGIN MODAL -->
-    <div id="admin-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
-        <div class="glass-card max-w-xs w-full rounded-2xl p-6 border border-brand-500/30 text-center">
-            <h3 class="text-base font-extrabold text-white mb-2">Admin Login</h3>
-            <form onsubmit="handleAdminLogin(event)" class="space-y-3">
-                <input type="password" id="admin-pass-input" placeholder="Admin Password" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                <button type="submit" class="w-full bg-brand-600 text-white font-bold text-xs py-2.5 rounded-xl">Access Dashboard</button>
-            </form>
-        </div>
-    </div>
-
+    <!-- Script Logic -->
     <script>
-        // Updated Google Apps Script Web App URL
-        const webAppUrl = "https://script.google.com/macros/s/AKfycbyCgAIq5x3QhYTgP2wbDMVeJDEMvKhnuSDQlWT4mR8-zpFx85oV0DIJ85xCaRcP5js/exec"; 
-        
-        let adminPassword = "123";
-        window.contestantDatabase = {};
-        window.activeUser = null;
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxukrFDbrY4IbmuTWCvu9s76sorYvnWEu6xSNWho9N37tnzIQHbHOYCJeiH60P9HDI/exec";
 
-        const jeelaniFacts = [
-            "ഹിജ്റ 470 ൽ പേർഷ്യയിലെ ജീലാനിലാണ് ശൈഖ് അബ്ദുൽ ഖാദിർ ജീലാനി (റ) ജനിച്ചത്.",
-            "അറിവ് നേടാനായി ചെറുപ്പത്തിൽ തന്നെ അവിടുന്ന് ബാഗ്ദാദിലേക്ക് പുറപ്പെട്ടു.",
-            "സുൽത്വാനുൽ ഔലിയാഅ് (ഔലിയാക്കളുടെ സുൽത്താൻ) എന്ന മഹത്തായ നാമത്തിൽ അറിയപ്പെടുന്നു."
-        ];
+        // Local Storage State Initialization with fallback
+        let appData = JSON.parse(localStorage.getItem('sahityolsav_data')) || {
+            teams: [],
+            programs: [],
+            results: []
+        };
 
-        window.addEventListener('DOMContentLoaded', async () => {
-            initSlider();
-            initTimer();
-            await fetchSheetData();
-            checkAutoLogin();
-        });
-
-        async function fetchSheetData() {
-            try {
-                const res = await fetch(webAppUrl);
-                const data = await res.json();
-                
-                if (Array.isArray(data)) {
-                    data.forEach(item => {
-                        const uid = item.userId || item.UserID || item['User ID'] || item.userID;
-                        if (uid) {
-                            const cleanId = String(uid).trim().toUpperCase();
-                            window.contestantDatabase[cleanId] = {
-                                name: item.name || item.Name || 'N/A',
-                                place: item.place || item.Place || 'N/A',
-                                gender: item.gender || item.Gender || 'N/A',
-                                class: item.classVal || item.Class || '',
-                                category: (item.classVal || item.Class) ? `${item.classVal || item.Class} ${item.category || item.Category || ''}` : (item.category || item.Category || 'N/A'),
-                                phone: item.phone || item.Mobile || item.Phone || 'N/A',
-                                pass: String(item.password || item.Password || '123456').trim(),
-                                status: item.status || item.Status || 'Approved'
-                            };
-                        }
-                    });
-                }
-            } catch (err) {
-                console.error("Sheet data fetch failed:", err);
-            }
+        function saveData() {
+            localStorage.setItem('sahityolsav_data', JSON.stringify(appData));
         }
 
-        async function handleManualLogin(e) {
-            e.preventDefault();
-            const userId = document.getElementById('login-userid').value.trim().toUpperCase();
-            const pass = document.getElementById('login-pass').value.trim();
-            const errBox = document.getElementById('login-error-msg');
-
-            await fetchSheetData();
-
-            const student = window.contestantDatabase[userId];
-            if (!student) {
-                errBox.innerHTML = `<div class="p-3 rounded-xl bg-rose-500/10 text-rose-300 font-semibold text-center">യൂസർ ഐ.ഡി "${userId}" കണ്ടെത്താനായില്ല.</div>`;
-                return;
-            }
-
-            if (student.pass !== pass) {
-                errBox.innerHTML = `<div class="p-3 rounded-xl bg-rose-500/10 text-rose-300 font-semibold text-center">നൽകിയ പാസ്‌വേഡ് തെറ്റാണ്!</div>`;
-                return;
-            }
-
-            window.activeUser = { id: userId, ...student };
-            localStorage.setItem('ssf_active_user_id', userId);
-            showUserDashboard();
-        }
-
-        function checkAutoLogin() {
-            const savedId = localStorage.getItem('ssf_active_user_id');
-            if (savedId && window.contestantDatabase[savedId]) {
-                window.activeUser = { id: savedId, ...window.contestantDatabase[savedId] };
-                showUserDashboard();
-            }
-        }
-
-        function showUserDashboard() {
-            if (!window.activeUser) return;
-            document.getElementById('portal-main-view').classList.add('hidden');
-            document.getElementById('portal-user-view').classList.remove('hidden');
-
-            document.getElementById('user-display-id').innerText = window.activeUser.id;
-            document.getElementById('user-display-name').innerText = window.activeUser.name;
-            document.getElementById('user-display-category').innerText = window.activeUser.category;
-
-            document.getElementById('ht-userid').innerText = window.activeUser.id;
-            document.getElementById('ht-name').innerText = window.activeUser.name;
-            document.getElementById('ht-place').innerText = window.activeUser.place;
-            document.getElementById('ht-gender').innerText = window.activeUser.gender;
-            document.getElementById('ht-cat').innerText = window.activeUser.category;
-            
-            loadReadingLogs();
-        }
-
-        function handleLogout() {
-            window.activeUser = null;
-            localStorage.removeItem('ssf_active_user_id');
-            document.getElementById('portal-user-view').classList.add('hidden');
-            document.getElementById('portal-main-view').classList.remove('hidden');
-        }
-
-        function handleSaveReadingLog(e) {
-            e.preventDefault();
-            if (!window.activeUser) return;
-
-            const date = document.getElementById('log-date').value;
-            const pages = document.getElementById('log-pages').value.trim();
-            const notes = document.getElementById('log-notes').value.trim();
-
-            const storageKey = `ssf_logs_${window.activeUser.id}`;
-            const existingLogs = JSON.parse(localStorage.getItem(storageKey) || "[]");
-
-            existingLogs.unshift({ date, pages, notes });
-            localStorage.setItem(storageKey, JSON.stringify(existingLogs));
-
-            document.getElementById('log-pages').value = '';
-            document.getElementById('log-notes').value = '';
-            loadReadingLogs();
-        }
-
-        function loadReadingLogs() {
-            if (!window.activeUser) return;
-            const container = document.getElementById('reading-logs-container');
-            const logs = JSON.parse(localStorage.getItem(`ssf_logs_${window.activeUser.id}`) || "[]");
-
-            if (logs.length === 0) {
-                container.innerHTML = `<p class="text-slate-500 text-[11px] italic">ഇതുവരെ വായനാ വിവരങ്ങൾ രേഖപ്പെടുത്തിയിട്ടില്ല.</p>`;
-                return;
-            }
-
-            container.innerHTML = logs.map(log => `
-                <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl space-y-1">
-                    <div class="flex justify-between font-bold text-brand-400">
-                        <span>${log.date}</span>
-                        <span>പേജ്: ${log.pages}</span>
-                    </div>
-                    ${log.notes ? `<p class="text-slate-300">${log.notes}</p>` : ''}
-                </div>
-            `).join('');
-        }
-
-        // QR Scanner Logic
-        let html5QrcodeScanner = null;
-        function toggleScanner() {
-            const container = document.getElementById('qr-reader-container');
-            if (container.classList.contains('hidden')) {
-                container.classList.remove('hidden');
-                if (!html5QrcodeScanner) html5QrcodeScanner = new Html5Qrcode("reader");
-                html5QrcodeScanner.start({ facingMode: "environment" }, { fps: 10, qrbox: 200 }, (code) => {
-                    document.getElementById('login-userid').value = code.trim().toUpperCase();
-                    container.classList.add('hidden');
-                    html5QrcodeScanner.stop();
-                });
+        function switchTab(tab) {
+            if (tab === 'public') {
+                document.getElementById('view-public').classList.remove('hidden');
+                document.getElementById('view-admin').classList.add('hidden');
             } else {
-                container.classList.add('hidden');
-                if (html5QrcodeScanner) html5QrcodeScanner.stop();
+                document.getElementById('view-public').classList.add('hidden');
+                document.getElementById('view-admin').classList.remove('hidden');
             }
         }
 
-        // Secret Admin Login
-        let clickCount = 0;
-        function handleFooterClick() {
-            clickCount++;
-            if (clickCount === 3) {
-                clickCount = 0;
-                document.getElementById('admin-modal').classList.remove('hidden');
-                document.getElementById('admin-modal').classList.add('flex');
+        async function syncWithAppsScript() {
+            const statusEl = document.getElementById('sync-status');
+            statusEl.innerText = "Syncing...";
+            try {
+                const response = await fetch(SCRIPT_URL, { method: 'GET', mode: 'no-cors' });
+                statusEl.innerText = "Connected / Data Synced Successfully";
+                statusEl.className = "font-bold text-green-600";
+                renderPublicView();
+            } catch (error) {
+                statusEl.innerText = "Offline Mode (Using Local Cache)";
+                statusEl.className = "font-bold text-amber-600";
+                renderPublicView();
             }
         }
 
-        function handleAdminLogin(e) {
-            e.preventDefault();
-            if (document.getElementById('admin-pass-input').value === adminPassword) {
-                document.getElementById('admin-modal').classList.add('hidden');
-                document.getElementById('admin-view-modal').classList.remove('hidden');
-                renderAdminTable();
+        function renderPublicView() {
+            const container = document.getElementById('public-content');
+            container.innerHTML = `
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100 text-xs uppercase text-gray-600">
+                            <th class="p-3 border">Team Name</th>
+                            <th class="p-3 border">Total Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${appData.teams.length > 0 ? appData.teams.map(t => `
+                            <tr class="border-b hover:bg-gray-50 text-sm">
+                                <td class="p-3 border">${t.name}</td>
+                                <td class="p-3 border font-semibold">${t.points || 0}</td>
+                            </tr>
+                        `).join('') : `<tr><td colspan="2" class="p-4 text-center text-gray-500 text-sm">ഡാറ്റകളൊന്നും ലഭ്യമല്ല.</td></tr>`}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function handleAdminLogin() {
+            const user = document.getElementById('admin-user').value;
+            const pass = document.getElementById('admin-pass').value;
+            // Credentials: prmlbdsahityolsav / shtlsav12@26
+            if (user === 'prmlbdsahityolsav' && pass === 'shtlsav12@26') {
+                document.getElementById('admin-login').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                document.getElementById('login-error').classList.add('hidden');
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
             }
         }
 
-        function closeAdminDashboard() {
-            document.getElementById('admin-view-modal').classList.add('hidden');
+        function handleAdminLogout() {
+            document.getElementById('admin-login').classList.remove('hidden');
+            document.getElementById('admin-dashboard').classList.add('hidden');
+            document.getElementById('admin-user').value = '';
+            document.getElementById('admin-pass').value = '';
         }
 
-        function renderAdminTable() {
-            const tbody = document.getElementById('admin-table-body');
-            tbody.innerHTML = '';
-            Object.keys(window.contestantDatabase).forEach(id => {
-                const s = window.contestantDatabase[id];
-                tbody.innerHTML += `
-                    <tr class="border-b border-slate-800/60">
-                        <td class="p-3 font-mono font-bold text-brand-400">${id}</td>
-                        <td class="p-3 font-bold text-white">${s.name}</td>
-                        <td class="p-3">${s.place}</td>
-                        <td class="p-3">${s.gender}</td>
-                        <td class="p-3">${s.category}</td>
-                        <td class="p-3 font-mono">${s.phone}</td>
-                        <td class="p-3 font-mono text-amber-400">${s.pass}</td>
-                        <td class="p-3">${s.status}</td>
-                    </tr>
-                `;
-            });
+        function exportDataJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "sahityolsav_backup.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
         }
 
-        function initSlider() {
-            let i = 0;
-            setInterval(() => {
-                i = (i + 1) % jeelaniFacts.length;
-                document.getElementById('facts-slider-content').innerText = jeelaniFacts[i];
-            }, 4000);
-        }
-
-        function initTimer() {
-            const target = new Date("2026-10-15T20:00:00+05:30").getTime();
-            setInterval(() => {
-                const diff = target - new Date().getTime();
-                if (diff > 0) {
-                    document.getElementById('timer-days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-                    document.getElementById('timer-hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-                    document.getElementById('timer-minutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-                    document.getElementById('timer-seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+        function importDataJSON(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    appData = JSON.parse(e.target.result);
+                    saveData();
+                    alert('Data imported successfully!');
+                    renderPublicView();
+                } catch (err) {
+                    alert('Invalid JSON file!');
                 }
-            }, 1000);
+            };
+            reader.readAsText(file);
         }
 
-        function togglePasswordVisibility(inputId, iconId) {
-            const input = document.getElementById(inputId);
-            input.type = input.type === "password" ? "text" : "password";
-        }
+        // Initialize on load
+        window.onload = function() {
+            syncWithAppsScript();
+        };
     </script>
 </body>
 </html>
