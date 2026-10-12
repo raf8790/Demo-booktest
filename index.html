@@ -1,37 +1,1818 @@
+```html
 <!DOCTYPE html>
 <html lang="ml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahityolsav Portal</title>
+    <title>BOOK TEST 2026 - SSF PERUMALABAD UNIT</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Manrope & Noto Sans Malayalam -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- HTML5 QR Code Reader -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'Noto Sans Malayalam', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: 'Manrope', 'Noto Sans Malayalam', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .iframe-container {
-            width: 100%;
-            height: 100vh;
-            border: none;
+        .glass-card-hover {
+            transition: all 0.3s ease;
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(34, 197, 94, 0.4);
+            transform: translateY(-2px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(51, 65, 85, 0.8);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(34, 197, 94, 0.5);
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
 
-    <!-- Google Apps Script Full Page Embed -->
-    <iframe 
-        src="https://script.google.com/macros/s/AKfycbxukrFDbrY4IbmuTWCvu9s76sorYvnWEu6xSNWho9N37tnzIQHbHOYCJeiH60P9HDI/exec" 
-        class="iframe-container" 
-        title="Sahityolsav Portal">
-    </iframe>
+    <!-- HEADER / NAVIGATION -->
+    <header class="border-b border-slate-800 bg-slate-950/80 sticky top-0 z-40 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-900 border border-brand-500/30 flex items-center justify-center p-1 shadow-lg shadow-brand-500/10">
+                    <img src="https://drive.google.com/thumbnail?id=1dzGtT_B1PV4yX2wP2ClQDwjSfYJ6I53r&sz=w200" alt="SSF Logo" class="w-full h-full object-contain rounded-full" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SSF&background=16a34a&color=fff';">
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-sm sm:text-base tracking-wider text-white uppercase">BOOK TEST 2026</h1>
+                    <p class="text-[10px] sm:text-xs font-semibold text-brand-400">SSF PERUMALABAD UNIT</p>
+                </div>
+            </div>
 
+            <!-- Header Right Action -->
+            <div id="header-user-status" class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    Live Portal
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-6xl mx-auto px-4 py-6 w-full flex-1">
+
+        <!-- LOGGED OUT MAIN VIEW -->
+        <div id="portal-main-view" class="space-y-6">
+
+            <!-- HERO SECTION -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden border border-brand-500/20 shadow-2xl">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-2xl mx-auto space-y-4">
+                    <span class="px-3 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/30 rounded-full text-xs font-bold uppercase tracking-wider">
+                        ഷെയ്ഖ് ജീലാനി (റ) അനുസ്മരണ മത്സരം
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+                        ബുക്ക് ടെസ്റ്റ് 2026
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm font-medium">
+                        രചന: സയ്യിദ് സ്വലാഹുദ്ദീൻ ബുഖാരി
+                    </p>
+
+                    <!-- Shaikh Jeelani (r) Facts Slider -->
+                    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 text-left relative overflow-hidden shadow-lg">
+                        <div class="flex items-center gap-2 text-brand-400 text-xs font-bold mb-2">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>ശൈഖ് ജീലാനി (റ) - അറിയേണ്ട കാര്യങ്ങൾ</span>
+                        </div>
+                        <div id="facts-slider-content" class="text-xs sm:text-sm text-slate-200 min-h-[50px] flex items-center transition-opacity duration-500 leading-relaxed font-medium">
+                            <!-- Dynamically updated -->
+                        </div>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div class="pt-2">
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3">ഓൺലൈൻ ടെസ്റ്റ് ആരംഭിക്കാൻ ഇനി</p>
+                        <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
+                                <span id="timer-days" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
+                                <span class="text-[10px] text-slate-400 uppercase font-bold">ദിവസം</span>
+                            </div>
+                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
+                                <span id="timer-hours" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
+                                <span class="text-[10px] text-slate-400 uppercase font-bold">മണിക്കൂർ</span>
+                            </div>
+                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
+                                <span id="timer-minutes" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
+                                <span class="text-[10px] text-slate-400 uppercase font-bold">മിനുട്ട്</span>
+                            </div>
+                            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 sm:p-3 text-center">
+                                <span id="timer-seconds" class="block text-xl sm:text-3xl font-black text-brand-400 font-mono">00</span>
+                                <span class="text-[10px] text-slate-400 uppercase font-bold">സെക്കൻഡ്</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCANNER & LOGIN SECTION -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- QR Scanner Box -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg border border-brand-500/30">
+                                <i class="fa-solid fa-qrcode"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-white">ഹാൾ ടിക്കറ്റ് ക്യു.ആർ സ്കാനർ</h3>
+                                <p class="text-xs text-slate-400">Scan QR Code from Hall Ticket</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            ഹാൾ ടിക്കറ്റിലെ ക്യു.ആർ കോഡ് ക്യാമറയ്ക്ക് മുന്നിൽ കാണിക്കുക. യൂസർ ഐ.ഡി സ്വയം സ്കാൻ ചെയ്യപ്പെടും.
+                        </p>
+
+                        <!-- Camera Scanner Area -->
+                        <div id="qr-reader-container" class="hidden mb-4 overflow-hidden rounded-xl border border-brand-500/40 bg-slate-950">
+                            <div id="reader" class="w-full"></div>
+                        </div>
+
+                        <button onclick="toggleScanner()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-camera"></i>
+                            <span id="scanner-btn-text">ക്യാമറ തുറന്ന് QR സ്കാൻ ചെയ്യുക</span>
+                        </button>
+                    </div>
+
+                    <!-- Password Login Form -->
+                    <form onsubmit="handleManualLogin(event)" class="space-y-3 bg-slate-900/60 p-4 rounded-xl border border-slate-700/60">
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">സ്കാൻ ചെയ്ത യൂസർ ഐ.ഡി (User ID)</label>
+                            <input type="text" id="login-userid" placeholder="ക്യു.ആർ കോഡ് സ്കാൻ ചെയ്യുക..." readonly required class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-3 py-2 text-xs text-brand-400 font-mono font-bold cursor-not-allowed">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">പാസ്‌വേഡ് (Password)</label>
+                            <div class="relative">
+                                <input type="password" id="login-pass" placeholder="പാസ്‌വേഡ് നൽകുക" required class="w-full bg-slate-800 border border-slate-700 rounded-lg pl-3 pr-10 py-2 text-xs text-white focus:outline-none focus:border-brand-500">
+                                <button type="button" onclick="togglePasswordVisibility('login-pass', 'login-pass-icon')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors">
+                                    <i id="login-pass-icon" class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="button" onclick="openForgotPasswordModal()" class="text-[11px] text-brand-400 hover:underline font-semibold">
+                                Forget Password? (പാസ്‌വേഡ് മറന്നോ?)
+                            </button>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 rounded-lg transition-all shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-right-to-bracket"></i> Student Login
+                        </button>
+                    </form>
+
+                    <div id="login-error-msg" class="mt-3 text-xs"></div>
+                </div>
+
+                <!-- Important Notes -->
+                <div class="bg-slate-800/40 border border-slate-800 rounded-2xl p-6 backdrop-blur-sm flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-200 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-brand-400"></i> ടെസ്റ്റ് നിബന്ധനകൾ & നിർദ്ദേശങ്ങൾ
+                        </h4>
+                        <ul class="space-y-2.5 text-xs text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-400 mt-0.5"></i>
+                                <span>ഓൺലൈൻ ടെസ്റ്റ് <strong>2026 ഒക്ടോബർ 15 രാത്രി 8:00 മണിക്ക്</strong> കൃത്യമായി ആരംഭിക്കും.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-400 mt-0.5"></i>
+                                <span>ഓഫ്‌ലൈൻ ടെസ്റ്റ് <strong>2026 ഒക്ടോബർ 17 വൈകുന്നേരം 3:00 മണിക്ക് മദ്രസത്തുൽ ഈമാൻ, എടക്കോം</strong> വച്ച് നടക്കും.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-400 mt-0.5"></i>
+                                <span>ഹാൾ ടിക്കറ്റിലെ ക്യു.ആർ കോഡ് സ്കാൻ ചെയ്ത ശേഷം പാസ്‌വേഡ് നൽകി ലോഗിൻ ചെയ്യുക.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-400 mt-0.5"></i>
+                                <span>പോർട്ടലിൽ ദിവസേനയുള്ള വായനാ പേജുകളും വിവരങ്ങളും സേവ് ചെയ്യാനുള്ള സൗകര്യമുണ്ട്.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <div>
+                            <p class="text-[11px] text-slate-400">സഹായങ്ങൾക്ക് ബന്ധപ്പെടുക:</p>
+                            <a href="tel:7510645137" class="text-xs font-bold text-brand-400 hover:underline">
+                                <i class="fa-solid fa-phone mr-1"></i> 7510645137
+                            </a>
+                        </div>
+                        <span class="text-[10px] bg-slate-800 text-slate-400 px-2.5 py-1 rounded-full border border-slate-700">
+                            v2.6 Secure Portal
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- LOGGED IN USER DASHBOARD VIEW -->
+        <div id="portal-user-view" class="hidden space-y-6">
+
+            <!-- Candidate Welcome Header -->
+            <div class="glass-card rounded-2xl p-6 border border-brand-500/30 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4 w-full md:w-auto">
+                    <div class="relative group">
+                        <div id="user-profile-img-container" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-brand-500 bg-slate-900 flex items-center justify-center text-slate-600 text-2xl shadow-xl">
+                            <i id="user-profile-placeholder" class="fa-solid fa-user"></i>
+                            <img id="user-profile-img" src="" class="w-full h-full object-cover hidden">
+                        </div>
+                        <label for="photo-upload-input" class="absolute -bottom-1 -right-1 bg-brand-600 hover:bg-brand-500 text-white w-7 h-7 rounded-full flex items-center justify-center cursor-pointer shadow-md transition-all border-2 border-slate-950">
+                            <i class="fa-solid fa-camera text-[10px]"></i>
+                        </label>
+                        <input type="file" id="photo-upload-input" accept="image/*" class="hidden" onchange="handlePhotoUpload(event)">
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-0.5 bg-brand-500/20 text-brand-400 border border-brand-500/30 rounded text-[10px] font-bold">VERIFIED CANDIDATE</span>
+                            <span id="user-display-id" class="text-xs font-mono text-slate-400 font-bold">BTG760</span>
+                        </div>
+                        <h2 id="user-display-name" class="text-lg sm:text-2xl font-black text-white">Manha Fathima</h2>
+                        <p id="user-display-category" class="text-xs text-brand-400 font-semibold">7 Senior</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 w-full md:w-auto justify-end">
+                    <button onclick="handleRemovePhoto()" id="remove-photo-btn" class="hidden text-xs text-rose-400 hover:underline px-3 py-2 bg-rose-500/10 border border-rose-500/20 rounded-xl">
+                        <i class="fa-solid fa-trash mr-1"></i> Remove Photo
+                    </button>
+                    <button onclick="handleLogout()" class="text-xs bg-slate-800 hover:bg-rose-600/80 text-slate-200 hover:text-white px-4 py-2.5 rounded-xl font-bold transition-all border border-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- Official Hall Ticket View -->
+                <div class="lg:col-span-2 glass-card rounded-2xl p-6 border border-slate-800 relative overflow-hidden">
+                    <div class="border-b border-slate-800 pb-4 mb-4 flex items-center justify-between">
+                        <div>
+                            <h3 class="text-base font-extrabold text-white">OFFICIAL HALL TICKET</h3>
+                            <p class="text-xs text-brand-400">SHAIKH JEELANI (R) MEMORIAL COMPETITION 2026</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block">UNIT</span>
+                            <span class="text-xs font-bold text-white">PERUMALABAD</span>
+                        </div>
+                    </div>
+
+                    <!-- Hall Ticket Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">USER ID</span>
+                            <span id="ht-userid" class="font-mono font-bold text-brand-400 text-sm">BTG760</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">NAME</span>
+                            <span id="ht-name" class="font-bold text-white text-sm">Manha Fathima</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">PLACE</span>
+                            <span id="ht-place" class="font-semibold text-slate-200">Perumalabad</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">GENDER</span>
+                            <span id="ht-gender" class="font-semibold text-slate-200">Female</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 sm:col-span-2">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">CLASS / CATEGORY</span>
+                            <span id="ht-cat" class="font-semibold text-brand-400">7 (Senior)</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 sm:col-span-2">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">EXAM DATE</span>
+                            <span id="ht-date" class="font-semibold text-slate-200">ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 sm:col-span-2">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">VENUE</span>
+                            <span id="ht-venue" class="font-semibold text-slate-200">MADRASATHUL IMAN, EDAKKOM</span>
+                        </div>
+                    </div>
+
+                    <!-- Online Exam Access Link Placeholder -->
+                    <div class="mt-6 p-4 rounded-xl bg-brand-950/60 border border-brand-500/40 text-center">
+                        <div class="flex items-center justify-center gap-2 text-brand-400 font-bold text-xs mb-1">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>ഓൺലൈൻ ടെസ്റ്റ് ലിങ്ക്</span>
+                        </div>
+                        <p id="exam-link-status-text" class="text-xs text-slate-300">
+                            ഓൺലൈൻ ടെസ്റ്റ് ലിങ്ക് 2026 ഒക്ടോബർ 15 രാത്രി 8:00 മണിക്ക് ഇവിടെ ലഭ്യമാകുന്നതാണ്.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reading Progress Log & Password Settings -->
+                <div class="space-y-6">
+
+                    <!-- Password Management Box -->
+                    <div class="glass-card rounded-2xl p-5 border border-slate-800">
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-key text-brand-400"></i> പാസ്‌വേഡ് മാറ്റുക (Change Password)
+                        </h4>
+                        <form onsubmit="handleUserPasswordChange(event)" class="space-y-3">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">നിലവിലെ പാസ്‌വേഡ്</label>
+                                <div class="relative">
+                                    <input type="password" id="user-old-pass" required class="w-full bg-slate-900 border border-slate-700 rounded-lg pl-3 pr-10 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                                    <button type="button" onclick="togglePasswordVisibility('user-old-pass', 'user-old-pass-icon')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors">
+                                        <i id="user-old-pass-icon" class="fa-solid fa-eye text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">പുതിയ പാസ്‌വേഡ്</label>
+                                <div class="relative">
+                                    <input type="password" id="user-new-pass" required class="w-full bg-slate-900 border border-slate-700 rounded-lg pl-3 pr-10 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                                    <button type="button" onclick="togglePasswordVisibility('user-new-pass', 'user-new-pass-icon')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors">
+                                        <i id="user-new-pass-icon" class="fa-solid fa-eye text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-slate-800 hover:bg-brand-600 text-white font-bold text-xs py-2 rounded-lg transition-all border border-slate-700">
+                                Update Password
+                            </button>
+                            <div id="pass-change-msg" class="text-[11px] font-medium text-center"></div>
+                        </form>
+                    </div>
+
+                    <!-- Daily Reading Progress Tracker -->
+                    <div class="glass-card rounded-2xl p-5 border border-slate-800">
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-book-bookmark text-brand-400"></i> വായനാ പുരോഗതി രേഖപ്പെടുത്തുക
+                        </h4>
+                        <form onsubmit="handleSaveReadingLog(event)" class="space-y-3">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">തീയതി</label>
+                                    <input type="date" id="log-date" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">വായിച്ച പേജുകൾ</label>
+                                    <input type="text" id="log-pages" placeholder="e.g. 1 - 15" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">പ്രധാനപ്പെട്ട ഭാഗങ്ങൾ / കുറിപ്പ്</label>
+                                <textarea id="log-notes" rows="2" placeholder="ഇന്നത്തെ വായനയിലെ പ്രധാന ആശയം..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-2 rounded-lg transition-all shadow-md">
+                                <i class="fa-solid fa-floppy-disk mr-1"></i> Save Entry
+                            </button>
+                        </form>
+
+                        <!-- Saved Logs List -->
+                        <div class="mt-4 pt-3 border-t border-slate-800">
+                            <h5 class="text-[11px] font-bold text-slate-400 uppercase mb-2">മുമ്പ് രേഖപ്പെടുത്തിയവ</h5>
+                            <div id="reading-logs-container" class="space-y-2 max-h-52 overflow-y-auto pr-1 text-xs">
+                                <!-- Log entries rendered dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- STUDENT EDIT LOG MODAL -->
+    <div id="student-edit-log-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 z-[60]">
+        <div class="glass-card max-w-md w-full rounded-2xl p-6 border border-brand-500/30 shadow-2xl relative">
+            <button onclick="closeStudentEditLogModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h4 class="font-bold text-white text-base mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-pen-to-square text-brand-400"></i> വായനാ വിവരങ്ങൾ തിരുത്തുക
+            </h4>
+            <form onsubmit="handleStudentSaveLogEdit(event)" class="space-y-3 text-xs">
+                <input type="hidden" id="student-edit-log-index">
+
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">തീയതി</label>
+                        <input type="date" id="student-edit-log-date" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">വായിച്ച പേജുകൾ</label>
+                        <input type="text" id="student-edit-log-pages" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">പ്രധാനപ്പെട്ട ഭാഗങ്ങൾ / കുറിപ്പ്</label>
+                    <textarea id="student-edit-log-notes" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500"></textarea>
+                </div>
+
+                <div class="pt-2 flex items-center gap-2">
+                    <button type="submit" class="flex-1 bg-brand-600 hover:bg-brand-500 text-white font-bold py-2 rounded-xl transition-all shadow-md">
+                        Save Updates
+                    </button>
+                    <button type="button" onclick="closeStudentEditLogModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-4 py-2 rounded-xl">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER WITH SECRET ADMIN TRIPLE CLICK -->
+    <footer onclick="handleFooterClick()" class="border-t border-slate-800/80 bg-slate-950 py-6 mt-10 cursor-pointer select-none">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-xs text-slate-400 font-medium">
+                © 2026 SSF PERUMALABAD UNIT. ALL RIGHTS RESERVED.
+            </p>
+            <p class="text-[10px] text-slate-600 mt-1">
+                SHAIKH JEELANI (R) MEMORIAL BOOK TEST PORTAL
+            </p>
+        </div>
+    </footer>
+
+    <!-- ADMIN PANEL OVERLAY MODAL -->
+    <div id="admin-view-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md hidden z-50 flex flex-col">
+        <!-- Admin Header -->
+        <div class="border-b border-slate-800 bg-slate-900/90 p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-white text-sm sm:text-base">ADMIN CONTROL DASHBOARD</h3>
+                    <p class="text-[10px] text-slate-400">SSF Perumalabad Unit • Live Cloud Database & Filters</p>
+                </div>
+            </div>
+            <button onclick="closeAdminDashboard()" class="text-slate-400 hover:text-white px-3 py-1.5 rounded-lg bg-slate-800 text-xs font-bold">
+                <i class="fa-solid fa-xmark mr-1"></i> Exit Admin
+            </button>
+        </div>
+
+        <!-- Admin Content Area -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-6 max-w-7xl mx-auto w-full space-y-6">
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="bg-slate-900 border border-slate-800 p-3 sm:p-4 rounded-xl">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">Total Candidates</span>
+                    <span id="admin-stat-total" class="block text-xl sm:text-2xl font-black text-white mt-1">0</span>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-3 sm:p-4 rounded-xl">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">Active Logged In</span>
+                    <span id="admin-stat-online" class="block text-xl sm:text-2xl font-black text-brand-400 mt-1">0</span>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-3 sm:p-4 rounded-xl">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">Photos Uploaded</span>
+                    <span id="admin-stat-photos" class="block text-xl sm:text-2xl font-black text-blue-400 mt-1">0</span>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-3 sm:p-4 rounded-xl">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">System Status</span>
+                    <span class="block text-xs font-bold text-brand-400 mt-2"><i class="fa-solid fa-circle text-[8px] animate-pulse mr-1"></i> Live Cloud Sync</span>
+                </div>
+            </div>
+
+            <!-- Filters & Search Bar -->
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-2xl flex flex-col sm:flex-row gap-3 items-center justify-between">
+                <div class="relative w-full sm:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input type="text" id="admin-search" oninput="renderAdminTable()" placeholder="Search Name, ID, Place..." class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-3 py-2 text-xs text-white focus:outline-none focus:border-brand-500">
+                </div>
+                
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <!-- Gender Filter -->
+                    <select id="admin-filter-gender" onchange="renderAdminTable()" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-brand-500 w-1/2 sm:w-auto">
+                        <option value="ALL">All Genders</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                    <!-- Category Filter -->
+                    <select id="admin-filter-category" onchange="renderAdminTable()" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-brand-500 w-1/2 sm:w-auto">
+                        <option value="ALL">All Categories</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-950/80 text-slate-400 font-bold uppercase text-[10px] border-b border-slate-800">
+                                <th class="p-3.5">Photo</th>
+                                <th class="p-3.5">User ID</th>
+                                <th class="p-3.5">Name</th>
+                                <th class="p-3.5">Place</th>
+                                <th class="p-3.5">Gender</th>
+                                <th class="p-3.5">Category</th>
+                                <th class="p-3.5">Mobile</th>
+                                <th class="p-3.5">Password</th>
+                                <th class="p-3.5">Status</th>
+                                <th class="p-3.5 text-center">Reading Logs & Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-table-body" class="divide-y divide-slate-800/60 text-slate-300">
+                            <!-- Rows rendered dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ADMIN LOGS & POINTS MODAL -->
+    <div id="admin-logs-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="glass-card max-w-2xl w-full rounded-2xl p-6 border border-brand-500/30 shadow-2xl relative flex flex-col max-h-[85vh]">
+            <button onclick="closeAdminLogsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="mb-4 pb-3 border-b border-slate-800 flex items-center justify-between pr-8">
+                <div>
+                    <h3 id="admin-logs-student-name" class="font-extrabold text-white text-base">Student Reading Data</h3>
+                    <p id="admin-logs-student-id" class="text-xs font-mono text-brand-400 font-bold">BTG760</p>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-900 border border-slate-700 px-3 py-1.5 rounded-xl">
+                    <span class="text-xs font-bold text-slate-300 uppercase">Total Points:</span>
+                    <span id="admin-logs-total-points" class="text-base font-black text-amber-400 font-mono">0</span>
+                </div>
+            </div>
+
+            <!-- Reading Logs List for Admin -->
+            <div id="admin-logs-container" class="flex-1 overflow-y-auto space-y-3 pr-1 text-xs">
+                <!-- Log entries with edit, delete, and point fields -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN EDIT LOG ITEM MODAL -->
+    <div id="admin-edit-log-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md hidden items-center justify-center p-4 z-[60]">
+        <div class="glass-card max-w-md w-full rounded-2xl p-6 border border-brand-500/30 shadow-2xl relative">
+            <button onclick="closeAdminEditLogModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h4 class="font-bold text-white text-base mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-pen-to-square text-brand-400"></i> Edit Reading Log Entry
+            </h4>
+            <form onsubmit="handleAdminSaveLogEdit(event)" class="space-y-3 text-xs">
+                <input type="hidden" id="edit-log-student-id">
+                <input type="hidden" id="edit-log-index">
+
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">തീയതി</label>
+                        <input type="date" id="edit-log-date" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">പേജുകൾ</label>
+                        <input type="text" id="edit-log-pages" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">കുറിപ്പ് / വിവരണം</label>
+                    <textarea id="edit-log-notes" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-brand-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-amber-400 uppercase mb-1"><i class="fa-solid fa-star mr-1"></i>നൽകുന്ന പോയിന്റ് (Point)</label>
+                    <input type="number" id="edit-log-points" min="0" value="0" class="w-full bg-slate-900 border border-amber-500/50 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 font-bold focus:outline-none focus:border-amber-400">
+                </div>
+
+                <div class="pt-2 flex items-center gap-2">
+                    <button type="submit" class="flex-1 bg-brand-600 hover:bg-brand-500 text-white font-bold py-2 rounded-xl transition-all">
+                        Save Changes
+                    </button>
+                    <button type="button" onclick="closeAdminEditLogModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-4 py-2 rounded-xl">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN PHOTO VIEW MODAL -->
+    <div id="photo-preview-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="glass-card max-w-sm w-full rounded-2xl p-5 border border-brand-500/30 shadow-2xl relative text-center">
+            <button onclick="closePhotoModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h4 id="modal-user-name" class="font-bold text-white text-base mb-1">Student Profile</h4>
+            <p id="modal-user-id" class="text-xs font-mono text-brand-400 mb-4">BTG760</p>
+            <div class="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-2 border-brand-500/40 bg-slate-900 shadow-xl mb-4">
+                <img id="modal-photo-img" src="" class="w-full h-full object-cover">
+            </div>
+            <button onclick="closePhotoModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs py-2 rounded-xl transition-all">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- FORGOT PASSWORD MODAL -->
+    <div id="forgot-pass-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="glass-card max-w-sm w-full rounded-2xl p-6 border border-brand-500/30 shadow-2xl relative">
+            <button onclick="closeForgotPasswordModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center mb-5">
+                <div class="w-12 h-12 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center mx-auto mb-2 text-xl border border-brand-500/30">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <h3 class="text-base font-extrabold text-white">Reset Password</h3>
+                <p class="text-xs text-slate-400">മൊബൈൽ നമ്പർ നൽകി പാസ്‌വേഡ് മാറ്റുക</p>
+            </div>
+            <form onsubmit="handleResetPassword(event)" class="space-y-3">
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">User ID</label>
+                    <input type="text" id="reset-userid" placeholder="User ID നൽകുക (e.g. BTG760)" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Mobile Number</label>
+                    <input type="tel" id="reset-phone" placeholder="രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പർ" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">New Password</label>
+                    <div class="relative">
+                        <input type="password" id="reset-newpass" placeholder="പുതിയ പാസ്‌വേഡ്" required class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-3 pr-10 py-2 text-xs text-white focus:outline-none focus:border-brand-500">
+                        <button type="button" onclick="togglePasswordVisibility('reset-newpass', 'reset-newpass-icon')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors">
+                            <i id="reset-newpass-icon" class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="reset-msg" class="text-xs font-semibold text-center"></div>
+                <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-2.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrows-rotate"></i> Change Password
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="admin-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="glass-card max-w-xs w-full rounded-2xl p-6 border border-brand-500/30 shadow-2xl relative">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center mb-4">
+                <div class="w-12 h-12 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center mx-auto mb-2 text-xl border border-brand-500/30">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-base font-extrabold text-white">Admin Authentication</h3>
+                <p class="text-xs text-slate-400">അഡ്മിൻ പാസ്‌വേഡ് നൽകുക</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-3">
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Admin Password</label>
+                    <div class="relative">
+                        <input type="password" id="admin-pass-input" placeholder="Enter Admin Password" required class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-3 pr-10 py-2 text-xs text-white focus:outline-none focus:border-brand-500">
+                        <button type="button" onclick="togglePasswordVisibility('admin-pass-input', 'admin-pass-icon')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors">
+                            <i id="admin-pass-icon" class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="admin-login-error" class="text-xs text-rose-400 font-semibold text-center"></div>
+                <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-2.5 rounded-xl transition-all shadow-lg">
+                    Access Dashboard
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase Configuration setup
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "AIzaSyDummyKeyForFallbackOnly12345",
+            authDomain: "ssf-booktest.firebaseapp.com",
+            projectId: "ssf-booktest",
+            storageBucket: "ssf-booktest.appspot.com",
+            messagingSenderId: "1234567890",
+            appId: "1:1234567890:web:abcdef123456"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'ssf-book-test-2026';
+
+        // Authenticate anonymously or with token
+        async function initAuth() {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                listenToCloudUpdates();
+            } catch (err) {
+                console.warn("Firebase Auth Error: Fallback to local storage mode", err);
+            }
+        }
+
+        // Realtime Firestore Listener to sync all changes dynamically
+        function listenToCloudUpdates() {
+            try {
+                const publicCol = collection(db, 'artifacts', appId, 'public', 'data', 'students');
+                onSnapshot(publicCol, (snapshot) => {
+                    snapshot.docChanges().forEach((change) => {
+                        const data = change.doc.data();
+                        const id = change.doc.id;
+                        if (data && window.contestantDatabase[id]) {
+                            if (data.pass) {
+                                window.contestantDatabase[id].pass = data.pass;
+                                localStorage.setItem(`ssf_pass_${id}`, data.pass);
+                            }
+                            if (data.profilePhoto !== undefined) {
+                                window.contestantDatabase[id].profilePhoto = data.profilePhoto;
+                                if (data.profilePhoto) {
+                                    localStorage.setItem(`ssf_photo_${id}`, data.profilePhoto);
+                                } else {
+                                    localStorage.removeItem(`ssf_photo_${id}`);
+                                }
+                            }
+                            if (data.sessionActive !== undefined) {
+                                window.contestantDatabase[id].sessionActive = data.sessionActive;
+                            }
+                            if (data.logs) {
+                                localStorage.setItem(`ssf_logs_${id}`, JSON.stringify(data.logs));
+                            }
+                        }
+                    });
+                    if (window.isAdminOpen) {
+                        window.renderAdminTable();
+                        if (window.currentAdminActiveLogUserId) {
+                            window.openAdminLogsModal(window.currentAdminActiveLogUserId);
+                        }
+                    }
+                    if (window.activeUser && window.contestantDatabase[window.activeUser.id]) {
+                        if (window.activeUser.pass !== window.contestantDatabase[window.activeUser.id].pass) {
+                            window.activeUser.pass = window.contestantDatabase[window.activeUser.id].pass;
+                        }
+                        if (window.loadReadingLogs) {
+                            window.loadReadingLogs();
+                        }
+                    }
+                }, (error) => {
+                    console.log("Firestore onSnapshot error:", error);
+                });
+            } catch(e) {
+                console.error("Firestore listen error", e);
+            }
+        }
+
+        // Helper function to save changes to Firestore
+        window.syncStudentToCloud = async function(userId, updateObj) {
+            try {
+                if (!auth.currentUser) return;
+                const studentRef = doc(db, 'artifacts', appId, 'public', 'data', 'students', userId);
+                await setDoc(studentRef, updateObj, { merge: true });
+            } catch (e) {
+                console.warn("Cloud Sync Error:", e);
+            }
+        };
+
+        // Initialize auth on load
+        initAuth();
+    </script>
+
+    <script>
+        // Data Feed Endpoint
+        const sheetCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTc0uKR34rIFoSlyG-3uMSLr-53gIbXI6oB2raiWPvzlVblXHNmRZBsolOpnRNkpt0-4lgFs6rc1rkF/pub?output=csv";
+        
+        // ADD YOUR GOOGLE APPS SCRIPT WEB APP URL HERE TO WRITE DIRECTLY TO SHEETS
+        const webAppUrl = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+
+        let adminPassword = "123";
+        window.isAdminOpen = false;
+        window.currentAdminActiveLogUserId = null;
+
+        // Database
+        window.contestantDatabase = {
+            "BTG760": { name: "Manha Fathima", place: "Perumalabad", gender: "Female", class: "", category: "7 Senior", phone: "7510645137", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "786313" },
+            "BTG851": { name: "Nusaibathul Mazniyya", place: "Perumalabad", gender: "Female", class: "", category: "6 Junior", phone: "9876543210", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "sajida" },
+            "BTB221": { name: "Musthafa B", place: "Habeeb Nagar", gender: "Male", class: "", category: "5 Junior", phone: "9876543211", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "123456" },
+            "BTG104": { name: "Mubeena B", place: "Habeeb Nagar", gender: "Female", class: "", category: "7 Senior", phone: "9876543212", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "234567" },
+            "BTG540": { name: "Fathima B", place: "Habeeb Nagar", gender: "Female", class: "", category: "9 Senior", phone: "9876543213", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "345678" },
+            "BTB129": { name: "Muhammad Yaseen.O", place: "Habeeb Nagar", gender: "Male", class: "", category: "4 Junior", phone: "9876543214", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "123456" },
+            "BTB627": { name: "Muhammed Farhan", place: "Perumalabad", gender: "Male", class: "", category: "4 Junior", phone: "9876543215", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "12345678" },
+            "BTG902": { name: "Hadiya. Pk", place: "Habeeb Nagar", gender: "Female", class: "", category: "10 Senior", phone: "9656270000", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "965627" },
+            "BTG987": { name: "Hadiya Ap", place: "Edakkom", gender: "Female", class: "", category: "8 Senior", phone: "9876543216", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "123456" },
+            "BTB456": { name: "Hani. Pk", place: "Habeeb Nagar", gender: "Male", class: "", category: "5 Junior", phone: "9656274500", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "96562745" },
+            "BTG351": { name: "Ayisha Razana Ak", place: "Perumalabad", gender: "Female", class: "", category: "6 Junior", phone: "9876543217", examDate: "ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)", venue: "MADRASATHUL IMAN, EDAKKOM", pass: "123456" }
+        };
+
+        window.activeUser = null;
+
+        // Function to Sync password update directly to Google Sheet Web App
+        async function updateSheetPassword(userId, newPassword) {
+            if (!webAppUrl || webAppUrl === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL") return;
+            try {
+                await fetch(webAppUrl, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        action: "updatePassword",
+                        userId: userId,
+                        newPassword: newPassword
+                    })
+                });
+            } catch (err) {
+                console.warn("Sheet password sync error:", err);
+            }
+        }
+
+        // Shaikh Jeelani (r) Facts
+        const jeelaniFacts = [
+            "ഹിജ്റ 470 ൽ പേർഷ്യയിലെ ജീലാനിലാണ് ശൈഖ് അബ്ദുൽ ഖാദിർ ജീലാനി (റ) ജനിച്ചത്.",
+            "അറിവ് നേടാനായി ചെറുപ്പത്തിൽ തന്നെ അവിടുന്ന് ബാഗ്ദാദിലേക്ക് പുറപ്പെട്ടു.",
+            "മാതാവ് നൽകിയ സത്യസന്ധതയുടെ ഉപദേശം യാത്രയിൽ കള്ളന്മാരുടെ മനം മാറ്റാൻ കാരണമായി.",
+            "ഇസ്ലാമിക കർമ്മശാസ്ത്രത്തിലും തസവ്വുഫിലും അവിടുന്ന് അത്യുന്നത പദവി കൈവരിച്ചു.",
+            "സുൽത്വാനുൽ ഔലിയാഅ് (ഔലിയാക്കളുടെ സുൽത്താൻ) എന്ന മഹത്തായ നാമത്തിൽ അറിയപ്പെടുന്നു.",
+            "ബാഗ്ദാദിലെ അവിടുത്തെ പ്രസംഗങ്ങളും സദസ്സുകളും ആയിരങ്ങളെ സന്മാർഗ്ഗത്തിലേക്ക് നയിച്ചു.",
+            "ഏറെ ദാതാവും പാവങ്ങളോട് അത്യധികം കരുണ കാണിച്ച മഹാനുമായിരുന്നു അവിടുന്ന്.",
+            "ഖാദിരിയ്യ ത്വരീഖത്തിന്റെ സ്ഥാപകനും പ്രയോക്താവുമാണ് ശൈഖ് ജീലാനി (റ).",
+            "ഗുൻയതുത്ത്വാലിബീൻ, ഫുതൂഹുൽ ഗൈബ് എന്നിവ അവിടുത്തെ പ്രധാന ഗ്രന്ഥങ്ങളിൽ ചിലതാണ്.",
+            "ഹിജ്റ 561 റബീഉൽ ആഖിർ 11 ന് ബാഗ്ദാദിൽ വച്ച് അവിടുന്ന് വഫാത്തായി."
+        ];
+
+        let currentFactIndex = 0;
+
+        // Initialization
+        window.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+            initTimer();
+            fetchSheetData();
+            restoreLocalPasswords();
+            checkAutoLogin();
+        });
+
+        function restoreLocalPasswords() {
+            Object.keys(window.contestantDatabase).forEach(id => {
+                const savedPass = localStorage.getItem(`ssf_pass_${id}`);
+                if (savedPass) {
+                    window.contestantDatabase[id].pass = savedPass;
+                }
+            });
+        }
+
+        function openForgotPasswordModal() {
+            const scannedId = document.getElementById('login-userid').value;
+            document.getElementById('reset-userid').value = scannedId || '';
+            document.getElementById('reset-phone').value = '';
+            document.getElementById('reset-newpass').value = '';
+            document.getElementById('reset-msg').innerText = '';
+            document.getElementById('forgot-pass-modal').classList.remove('hidden');
+            document.getElementById('forgot-pass-modal').classList.add('flex');
+        }
+
+        function closeForgotPasswordModal() {
+            document.getElementById('forgot-pass-modal').classList.add('hidden');
+            document.getElementById('forgot-pass-modal').classList.remove('flex');
+        }
+
+        async function handleResetPassword(e) {
+            e.preventDefault();
+            const userId = document.getElementById('reset-userid').value.trim().toUpperCase();
+            const phone = document.getElementById('reset-phone').value.trim();
+            const newPass = document.getElementById('reset-newpass').value.trim();
+            const msgBox = document.getElementById('reset-msg');
+
+            await fetchSheetData();
+
+            const student = window.contestantDatabase[userId];
+            if (!student) {
+                msgBox.className = "text-xs font-semibold text-rose-400";
+                msgBox.innerText = "തന്ന യൂസർ ഐ.ഡി കണ്ടെത്താനായില്ല!";
+                return;
+            }
+
+            const cleanInputPhone = phone.replace(/\D/g, '');
+            const storedPhone = (student.phone || '').replace(/\D/g, '');
+
+            if (cleanInputPhone.length >= 10 && storedPhone.length >= 10 && (cleanInputPhone.endsWith(storedPhone.slice(-10)) || storedPhone.endsWith(cleanInputPhone.slice(-10)))) {
+                if (newPass.length < 4) {
+                    msgBox.className = "text-xs font-semibold text-rose-400";
+                    msgBox.innerText = "പാസ്‌വേഡ് കുറഞ്ഞത് 4 അക്ഷരങ്ങൾ വേണം.";
+                    return;
+                }
+
+                localStorage.setItem(`ssf_pass_${userId}`, newPass);
+                window.contestantDatabase[userId].pass = newPass;
+
+                if (window.syncStudentToCloud) {
+                    window.syncStudentToCloud(userId, { pass: newPass });
+                }
+                
+                // Sync to Google Sheets
+                updateSheetPassword(userId, newPass);
+
+                msgBox.className = "text-xs font-semibold text-emerald-400";
+                msgBox.innerText = "പാസ്‌വേഡ് വിജയകരമായി മാറ്റി! ഇപ്പോൾ ലോഗിൻ ചെയ്യാം.";
+                setTimeout(() => {
+                    closeForgotPasswordModal();
+                }, 1500);
+            } else {
+                msgBox.className = "text-xs font-semibold text-rose-400";
+                msgBox.innerText = "മൊബൈൽ നമ്പർ തെറ്റാണ്! ശരിയായ നമ്പർ നൽകുക.";
+            }
+        }
+
+        function initSlider() {
+            const contentEl = document.getElementById('facts-slider-content');
+            if (!contentEl) return;
+            
+            contentEl.innerText = jeelaniFacts[0];
+            
+            setInterval(() => {
+                contentEl.classList.add('opacity-0');
+                setTimeout(() => {
+                    currentFactIndex = (currentFactIndex + 1) % jeelaniFacts.length;
+                    contentEl.innerText = jeelaniFacts[currentFactIndex];
+                    contentEl.classList.remove('opacity-0');
+                }, 300);
+            }, 5000);
+        }
+
+        function initTimer() {
+            const targetDate = new Date("2026-10-15T20:00:00+05:30").getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference <= 0) {
+                    document.getElementById('timer-days').innerText = "00";
+                    document.getElementById('timer-hours').innerText = "00";
+                    document.getElementById('timer-minutes').innerText = "00";
+                    document.getElementById('timer-seconds').innerText = "00";
+                    
+                    const statusText = document.getElementById('exam-link-status-text');
+                    if (statusText) {
+                        statusText.innerHTML = `<a href="#" class="inline-block bg-brand-600 hover:bg-brand-500 text-white font-extrabold px-6 py-2.5 rounded-xl shadow-lg transition-all animate-bounce">ടെസ്റ്റ് ആരംഭിക്കാൻ ഇവിടെ ക്ലിക്ക് ചെയ്യുക (START TEST)</a>`;
+                    }
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('timer-days').innerText = String(days).padStart(2, '0');
+                document.getElementById('timer-hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('timer-minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('timer-seconds').innerText = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        async function fetchSheetData() {
+            try {
+                const res = await fetch(sheetCsvUrl);
+                if (res.ok) {
+                    const csvText = await res.text();
+                    const rows = parseCSV(csvText);
+                    
+                    let startIndex = 0;
+                    if (rows.length > 0 && rows[0][1] && (rows[0][1].toLowerCase().includes('user') || rows[0][1].toLowerCase().includes('id'))) {
+                        startIndex = 1;
+                    }
+
+                    for (let i = startIndex; i < rows.length; i++) {
+                        const row = rows[i];
+                        if (!row || row.length < 3) continue;
+                        
+                        const userId = (row[1] || '').replace(/[^a-zA-Z0-9]/g, '').trim().toUpperCase();
+                        const name = (row[2] || 'N/A');
+                        const place = (row[3] || 'PERUMALABAD');
+                        const gender = (row[4] || 'N/A');
+                        const classVal = (row[5] || '');
+                        const categoryName = (row[6] || '');
+                        const phoneVal = (row[7] || '');
+                        const passwordVal = (row[8] || '123456');
+                        
+                        let profilePhotoVal = '';
+                        if (row[14] && (row[14].startsWith('http') || row[14].startsWith('data:image') || row[14].length > 30)) {
+                            profilePhotoVal = row[14].trim();
+                        } else {
+                            for (let col = 9; col < row.length; col++) {
+                                const val = row[col];
+                                if (val && (val.startsWith('http') || val.startsWith('data:image') || val.length > 50)) {
+                                    profilePhotoVal = val.trim();
+                                    break;
+                                }
+                            }
+                        }
+
+                        let category = categoryName;
+                        if (classVal && categoryName) {
+                            category = `${classVal} ${categoryName}`;
+                        }
+
+                        const examDate = 'ONLINE: OCT 15 (8 PM) | OFFLINE: OCT 17 (3 PM)';
+                        const venue = 'MADRASATHUL IMAN, EDAKKOM';
+
+                        if (userId && userId.startsWith("BT")) {
+                            const savedPass = localStorage.getItem(`ssf_pass_${userId}`);
+                            window.contestantDatabase[userId] = { 
+                                name, 
+                                place, 
+                                gender, 
+                                class: classVal, 
+                                category, 
+                                phone: phoneVal || (window.contestantDatabase[userId] ? window.contestantDatabase[userId].phone : ''),
+                                examDate, 
+                                venue, 
+                                pass: savedPass || (window.contestantDatabase[userId] ? window.contestantDatabase[userId].pass : passwordVal),
+                                profilePhoto: profilePhotoVal || (window.contestantDatabase[userId] ? window.contestantDatabase[userId].profilePhoto : '')
+                            };
+                            
+                            if (profilePhotoVal && !localStorage.getItem(`ssf_photo_${userId}`)) {
+                                localStorage.setItem(`ssf_photo_${userId}`, profilePhotoVal);
+                            }
+                        }
+                    }
+                }
+            } catch (error) {
+                console.warn("Sheet sync unavailable, using cached database.", error);
+            }
+        }
+
+        function parseCSV(text) {
+            const lines = text.split('\n');
+            return lines.map(line => {
+                const result = [];
+                let cell = '';
+                let inQuotes = false;
+                for (let i = 0; i < line.length; i++) {
+                    const c = line[i];
+                    if (c === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (c === ',' && !inQuotes) {
+                        result.push(cell.trim());
+                        cell = '';
+                    } else {
+                        cell += c;
+                    }
+                }
+                result.push(cell.trim());
+                return result;
+            });
+        }
+
+        function togglePasswordVisibility(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (!input || !icon) return;
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = "password";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        async function handleManualLogin(e) {
+            e.preventDefault();
+            const userId = document.getElementById('login-userid').value.trim().toUpperCase();
+            const pass = document.getElementById('login-pass').value.trim();
+            const errBox = document.getElementById('login-error-msg');
+
+            await fetchSheetData();
+
+            if (!userId) {
+                errBox.innerHTML = `<div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 font-semibold text-center">ദയവായി ഹാൾ ടിക്കറ്റ് QR കോഡ് സ്കാൻ ചെയ്യുക!</div>`;
+                return;
+            }
+
+            const student = window.contestantDatabase[userId];
+            if (!student) {
+                errBox.innerHTML = `<div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 font-semibold text-center">ഐ.ഡി "${userId}" സെർവറിൽ കണ്ടെത്താനായില്ല.</div>`;
+                return;
+            }
+
+            if (student.pass && student.pass !== pass) {
+                errBox.innerHTML = `<div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 font-semibold text-center">നൽകിയ പാസ്‌വേഡ് തെറ്റാണ്!</div>`;
+                return;
+            }
+
+            window.activeUser = { id: userId, ...student };
+            localStorage.setItem('ssf_active_user_id', userId);
+            localStorage.setItem(`ssf_session_${userId}`, 'true');
+
+            if (window.syncStudentToCloud) {
+                window.syncStudentToCloud(userId, { sessionActive: true });
+            }
+
+            showUserDashboard();
+        }
+
+        function checkAutoLogin() {
+            const savedId = localStorage.getItem('ssf_active_user_id');
+            if (savedId && window.contestantDatabase[savedId]) {
+                const savedPass = localStorage.getItem(`ssf_pass_${savedId}`);
+                window.activeUser = { id: savedId, ...window.contestantDatabase[savedId] };
+                if (savedPass) window.activeUser.pass = savedPass;
+                showUserDashboard();
+            }
+        }
+
+        function showUserDashboard() {
+            if (!window.activeUser) return;
+
+            document.getElementById('portal-main-view').classList.add('hidden');
+            document.getElementById('portal-user-view').classList.remove('hidden');
+
+            document.getElementById('user-display-id').innerText = window.activeUser.id;
+            document.getElementById('user-display-name').innerText = window.activeUser.name;
+            document.getElementById('user-display-category').innerText = window.activeUser.category || 'Participant';
+
+            document.getElementById('ht-userid').innerText = window.activeUser.id;
+            document.getElementById('ht-name').innerText = window.activeUser.name;
+            document.getElementById('ht-place').innerText = window.activeUser.place || 'PERUMALABAD';
+            document.getElementById('ht-gender').innerText = window.activeUser.gender || 'N/A';
+            document.getElementById('ht-cat').innerText = window.activeUser.category || 'N/A';
+            document.getElementById('ht-date').innerText = window.activeUser.examDate;
+            document.getElementById('ht-venue').innerText = window.activeUser.venue;
+
+            const savedPhoto = localStorage.getItem(`ssf_photo_${window.activeUser.id}`) || window.activeUser.profilePhoto;
+            if (savedPhoto) {
+                setProfilePhoto(savedPhoto);
+            } else {
+                resetProfilePhoto();
+            }
+
+            loadReadingLogs();
+            
+            document.getElementById('header-user-status').innerHTML = `
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-slate-300 font-bold hidden sm:inline">${window.activeUser.name}</span>
+                    <button onclick="handleLogout()" class="px-3 py-1 bg-rose-500/20 text-rose-300 border border-rose-500/30 rounded-full text-xs font-bold hover:bg-rose-500/30">
+                        Logout
+                    </button>
+                </div>
+            `;
+        }
+
+        function handleLogout() {
+            if (window.activeUser && window.activeUser.id) {
+                localStorage.removeItem(`ssf_session_${window.activeUser.id}`);
+                if (window.syncStudentToCloud) {
+                    window.syncStudentToCloud(window.activeUser.id, { sessionActive: false });
+                }
+            }
+            window.activeUser = null;
+            localStorage.removeItem('ssf_active_user_id');
+
+            document.getElementById('portal-user-view').classList.add('hidden');
+            document.getElementById('portal-main-view').classList.remove('hidden');
+
+            document.getElementById('login-userid').value = '';
+            document.getElementById('login-pass').value = '';
+            document.getElementById('login-error-msg').innerText = '';
+
+            document.getElementById('header-user-status').innerHTML = `
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    Live Portal
+                </span>
+            `;
+        }
+
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (file.size > 3 * 1024 * 1024) {
+                alert("ഫോട്ടോയുടെ വലിപ്പം 3MB യിൽ താഴെയായിരിക്കണം.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Img = e.target.result;
+                setProfilePhoto(base64Img);
+
+                if (window.activeUser) {
+                    localStorage.setItem(`ssf_photo_${window.activeUser.id}`, base64Img);
+                    window.contestantDatabase[window.activeUser.id].profilePhoto = base64Img;
+
+                    if (window.syncStudentToCloud) {
+                        window.syncStudentToCloud(window.activeUser.id, { profilePhoto: base64Img });
+                    }
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function setProfilePhoto(src) {
+            const imgEl = document.getElementById('user-profile-img');
+            const placeholderEl = document.getElementById('user-profile-placeholder');
+            const removeBtn = document.getElementById('remove-photo-btn');
+
+            imgEl.src = src;
+            imgEl.classList.remove('hidden');
+            placeholderEl.classList.add('hidden');
+            if (removeBtn) removeBtn.classList.remove('hidden');
+        }
+
+        function resetProfilePhoto() {
+            const imgEl = document.getElementById('user-profile-img');
+            const placeholderEl = document.getElementById('user-profile-placeholder');
+            const removeBtn = document.getElementById('remove-photo-btn');
+
+            imgEl.src = '';
+            imgEl.classList.add('hidden');
+            placeholderEl.classList.remove('hidden');
+            if (removeBtn) removeBtn.classList.add('hidden');
+        }
+
+        function handleRemovePhoto() {
+            if (window.activeUser && window.activeUser.id !== 'ADMIN') {
+                localStorage.removeItem(`ssf_photo_${window.activeUser.id}`);
+                if (window.contestantDatabase[window.activeUser.id]) {
+                    window.contestantDatabase[window.activeUser.id].profilePhoto = '';
+                }
+                resetProfilePhoto();
+
+                if (window.syncStudentToCloud) {
+                    window.syncStudentToCloud(window.activeUser.id, { profilePhoto: "" });
+                }
+            }
+        }
+
+        function handleUserPasswordChange(e) {
+            e.preventDefault();
+            const oldPass = document.getElementById('user-old-pass').value.trim();
+            const newPass = document.getElementById('user-new-pass').value.trim();
+            const msgBox = document.getElementById('pass-change-msg');
+
+            if (!window.activeUser) return;
+
+            if (oldPass !== window.activeUser.pass) {
+                msgBox.className = "text-[11px] font-medium text-center text-rose-400";
+                msgBox.innerText = "നിലവിലെ പാസ്‌വേഡ് തെറ്റാണ്!";
+                return;
+            }
+
+            if (newPass.length < 4) {
+                msgBox.className = "text-[11px] font-medium text-center text-rose-400";
+                msgBox.innerText = "പുതിയ പാസ്‌വേഡ് കുറഞ്ഞത് 4 അക്ഷരങ്ങൾ വേണം.";
+                return;
+            }
+
+            localStorage.setItem(`ssf_pass_${window.activeUser.id}`, newPass);
+            window.activeUser.pass = newPass;
+            if (window.contestantDatabase[window.activeUser.id]) {
+                window.contestantDatabase[window.activeUser.id].pass = newPass;
+            }
+
+            if (window.syncStudentToCloud) {
+                window.syncStudentToCloud(window.activeUser.id, { pass: newPass });
+            }
+
+            // Sync update to Google Sheets
+            updateSheetPassword(window.activeUser.id, newPass);
+
+            msgBox.className = "text-[11px] font-medium text-center text-emerald-400";
+            msgBox.innerText = "പാസ്‌വേഡ് വിജയകരമായി മാറ്റി!";
+            
+            document.getElementById('user-old-pass').value = '';
+            document.getElementById('user-new-pass').value = '';
+
+            setTimeout(() => { msgBox.innerText = ''; }, 3000);
+        }
+
+        function handleSaveReadingLog(e) {
+            e.preventDefault();
+            if (!window.activeUser) return;
+
+            const date = document.getElementById('log-date').value;
+            const pages = document.getElementById('log-pages').value.trim();
+            const notes = document.getElementById('log-notes').value.trim();
+
+            const storageKey = `ssf_logs_${window.activeUser.id}`;
+            const existingLogs = JSON.parse(localStorage.getItem(storageKey) || "[]");
+
+            existingLogs.unshift({ date, pages, notes, timestamp: new Date().toLocaleDateString('ml-IN') });
+            localStorage.setItem(storageKey, JSON.stringify(existingLogs));
+
+            if (window.syncStudentToCloud) {
+                window.syncStudentToCloud(window.activeUser.id, { logs: existingLogs });
+            }
+
+            document.getElementById('log-pages').value = '';
+            document.getElementById('log-notes').value = '';
+
+            loadReadingLogs();
+        }
+
+        function loadReadingLogs() {
+            if (!window.activeUser) return;
+            const container = document.getElementById('reading-logs-container');
+            const storageKey = `ssf_logs_${window.activeUser.id}`;
+            const logs = JSON.parse(localStorage.getItem(storageKey) || "[]");
+
+            if (logs.length === 0) {
+                container.innerHTML = `<p class="text-slate-500 text-[11px] italic">ഇതുവരെ വായനാ വിവരങ്ങൾ രേഖപ്പെടുത്തിയിട്ടില്ല.</p>`;
+                return;
+            }
+
+            container.innerHTML = logs.map((log, idx) => `
+                <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl space-y-1.5">
+                    <div class="flex justify-between items-center text-[10px] font-bold text-brand-400">
+                        <span><i class="fa-regular fa-calendar mr-1"></i>${log.date || log.timestamp}</span>
+                        <div class="flex items-center gap-1.5">
+                            <span class="bg-slate-800 px-1.5 py-0.5 rounded text-slate-300">പേജ്: ${log.pages}</span>
+                            ${log.points ? `<span class="bg-amber-400/10 border border-amber-400/30 text-amber-300 px-1.5 py-0.5 rounded font-extrabold">★ ${log.points} Pts</span>` : ''}
+                        </div>
+                    </div>
+                    ${log.notes ? `<p class="text-slate-300 text-[11px] font-medium leading-normal">${log.notes}</p>` : ''}
+                    <div class="flex justify-end items-center gap-2 pt-1 border-t border-slate-800/60">
+                        <button onclick="openStudentEditLogModal(${idx})" class="text-[10px] text-brand-400 hover:text-brand-300 font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                        </button>
+                        <button onclick="handleStudentDeleteLog(${idx})" class="text-[10px] text-rose-400 hover:text-rose-300 font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openStudentEditLogModal(logIdx) {
+            if (!window.activeUser) return;
+            const storageKey = `ssf_logs_${window.activeUser.id}`;
+            const userLogs = JSON.parse(localStorage.getItem(storageKey) || "[]");
+            const log = userLogs[logIdx];
+            if (!log) return;
+
+            document.getElementById('student-edit-log-index').value = logIdx;
+            document.getElementById('student-edit-log-date').value = log.date || '';
+            document.getElementById('student-edit-log-pages').value = log.pages || '';
+            document.getElementById('student-edit-log-notes').value = log.notes || '';
+
+            const modal = document.getElementById('student-edit-log-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeStudentEditLogModal() {
+            const modal = document.getElementById('student-edit-log-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleStudentSaveLogEdit(e) {
+            e.preventDefault();
+            if (!window.activeUser) return;
+
+            const logIdx = parseInt(document.getElementById('student-edit-log-index').value);
+            const storageKey = `ssf_logs_${window.activeUser.id}`;
+            const userLogs = JSON.parse(localStorage.getItem(storageKey) || "[]");
+
+            if (!userLogs[logIdx]) return;
+
+            userLogs[logIdx].date = document.getElementById('student-edit-log-date').value;
+            userLogs[logIdx].pages = document.getElementById('student-edit-log-pages').value.trim();
+            userLogs[logIdx].notes = document.getElementById('student-edit-log-notes').value.trim();
+
+            localStorage.setItem(storageKey, JSON.stringify(userLogs));
+
+            if (window.syncStudentToCloud) {
+                window.syncStudentToCloud(window.activeUser.id, { logs: userLogs });
+            }
+
+            closeStudentEditLogModal();
+            loadReadingLogs();
+        }
+
+        function handleStudentDeleteLog(logIdx) {
+            if (!window.activeUser) return;
+            const storageKey = `ssf_logs_${window.activeUser.id}`;
+            const userLogs = JSON.parse(localStorage.getItem(storageKey) || "[]");
+
+            if (!userLogs[logIdx]) return;
+
+            userLogs.splice(logIdx, 1);
+            localStorage.setItem(storageKey, JSON.stringify(userLogs));
+
+            if (window.syncStudentToCloud) {
+                window.syncStudentToCloud(window.activeUser.id, { logs: userLogs });
+            }
+
+            loadReadingLogs();
+        }
+
+        // QR Code Scanner Control
+        let html5QrcodeScanner = null;
+
+        function toggleScanner() {
+            const container = document.getElementById('qr-reader-container');
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                startScanner();
+            } else {
+                stopScanner();
+            }
+        }
+
+        function startScanner() {
+            if (!html5QrcodeScanner) {
+                html5QrcodeScanner = new Html5Qrcode("reader");
+            }
+
+            const config = { fps: 10, qrbox: { width: 220, height: 220 } };
+
+            html5QrcodeScanner.start(
+                { facingMode: "environment" },
+                config,
+                (decodedText) => {
+                    stopScanner();
+                    let cleanCode = decodedText.trim().toUpperCase();
+                    const match = cleanCode.match(/BT[A-Z0-9]+/);
+                    if (match) {
+                        cleanCode = match[0];
+                    }
+
+                    fetchSheetData().then(() => {
+                        if (window.contestantDatabase[cleanCode]) {
+                            document.getElementById('login-userid').value = cleanCode;
+                            document.getElementById('login-error-msg').innerHTML = `
+                                <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-center font-semibold">
+                                    യൂസർ ഐ.ഡി "${cleanCode}" വിജയകരമായി സ്കാൻ ചെയ്തു! ദയവായി പാസ്‌വേഡ് നൽകി ലോഗിൻ ചെയ്യുക.
+                                </div>
+                            `;
+                        } else {
+                            document.getElementById('login-error-msg').innerHTML = `
+                                <div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-center font-semibold">
+                                    സ്കാൻ ചെയ്ത കോഡ് ("${cleanCode}") സെർവറിൽ കണ്ടെത്താനായില്ല.
+                                </div>
+                            `;
+                        }
+                    });
+                },
+                (errorMessage) => {}
+            ).catch(err => {
+                console.error("Camera access failed", err);
+            });
+        }
+
+        function stopScanner() {
+            if (html5QrcodeScanner) {
+                html5QrcodeScanner.stop().then(() => {
+                    document.getElementById('qr-reader-container').classList.add('hidden');
+                }).catch(() => {
+                    document.getElementById('qr-reader-container').classList.add('hidden');
+                });
+            } else {
+                document.getElementById('qr-reader-container').classList.add('hidden');
+            }
+        }
+
+        // SECRET ADMIN TRIPLE CLICK
+        let footerClickCount = 0;
+        let footerClickTimer = null;
+
+        function handleFooterClick() {
+            footerClickCount++;
+            clearTimeout(footerClickTimer);
+
+            if (footerClickCount === 3) {
+                footerClickCount = 0;
+                openAdminModal();
+            } else {
+                footerClickTimer = setTimeout(() => {
+                    footerClickCount = 0;
+                }, 1000);
+            }
+        }
+
+        function openAdminModal() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+            document.getElementById('admin-modal').classList.add('flex');
+            document.getElementById('admin-pass-input').value = '';
+            document.getElementById('admin-login-error').innerText = '';
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+            document.getElementById('admin-modal').classList.remove('flex');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const passInput = document.getElementById('admin-pass-input').value.trim();
+
+            if (passInput === adminPassword) {
+                closeAdminModal();
+                openAdminDashboard();
+            } else {
+                document.getElementById('admin-login-error').innerText = "തെറ്റായ അഡ്മിൻ പാസ്‌വേഡ്!";
+            }
+        }
+
+        function openAdminDashboard() {
+            window.isAdminOpen = true;
+            document.getElementById('admin-view-modal').classList.remove('hidden');
+            renderAdminTable();
+        }
+
+        function closeAdminDashboard() {
+            window.isAdminOpen = false;
+            document.getElementById('admin-view-modal').classList.add('hidden');
+        }
+
+        function renderAdminTable() {
+            const searchVal = document.getElementById('admin-search').value.toLowerCase().trim();
+            const genderFilter = document.getElementById('admin-filter-gender').value;
+            const categoryFilter = document.getElementById('admin-filter-category').value;
+
+            const tbody = document.getElementById('admin-table-body');
+            tbody.innerHTML = '';
+
+            const keys = Object.keys(window.contestantDatabase);
+            let totalCount = keys.length;
+            let photoCount = 0;
+            let activeOnlineCount = 0;
+
+            keys.forEach(id => {
+                const student = window.contestantDatabase[id];
+                const savedPhoto = localStorage.getItem(`ssf_photo_${id}`) || student.profilePhoto;
+                const isSessionActive = student.sessionActive || (localStorage.getItem(`ssf_session_${id}`) === 'true');
+
+                const userLogs = JSON.parse(localStorage.getItem(`ssf_logs_${id}`) || "[]");
+                const totalPoints = userLogs.reduce((acc, log) => acc + (Number(log.points) || 0), 0);
+
+                if (savedPhoto) photoCount++;
+                if (isSessionActive) activeOnlineCount++;
+
+                const matchesSearch = id.toLowerCase().includes(searchVal) || 
+                                      student.name.toLowerCase().includes(searchVal) || 
+                                      student.place.toLowerCase().includes(searchVal);
+
+                const matchesGender = (genderFilter === 'ALL') || 
+                                      (student.gender.toLowerCase() === genderFilter.toLowerCase());
+
+                const matchesCategory = (categoryFilter === 'ALL') || 
+                                        (student.category.toLowerCase().includes(categoryFilter.toLowerCase()));
+
+                if (matchesSearch && matchesGender && matchesCategory) {
+                    const tr = document.createElement('tr');
+                    tr.className = "hover:bg-slate-800/40 transition-colors";
+
+                    tr.innerHTML = `
+                        <td class="p-3">
+                            ${savedPhoto ? 
+                                `<img src="${savedPhoto}" onclick="previewAdminPhoto('${id}', '${student.name}', '${savedPhoto}')" class="w-8 h-8 rounded-lg object-cover cursor-pointer border border-brand-500/50 hover:scale-110 transition-all">` : 
+                                `<div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 text-xs"><i class="fa-solid fa-user"></i></div>`
+                            }
+                        </td>
+                        <td class="p-3 font-mono font-bold text-brand-400">${id}</td>
+                        <td class="p-3 font-bold text-white">${student.name}</td>
+                        <td class="p-3 text-slate-300">${student.place || 'N/A'}</td>
+                        <td class="p-3">${student.gender || 'N/A'}</td>
+                        <td class="p-3 font-semibold text-brand-300">${student.category || 'N/A'}</td>
+                        <td class="p-3 text-slate-300 font-mono">${student.phone || 'N/A'}</td>
+                        <td class="p-3 font-mono text-amber-400 font-bold">${student.pass || '123456'}</td>
+                        <td class="p-3">
+                            ${isSessionActive ? 
+                                `<span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">ONLINE</span>` : 
+                                `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">OFFLINE</span>`
+                            }
+                        </td>
+                        <td class="p-3 text-center">
+                            <button onclick="openAdminLogsModal('${id}')" class="px-3 py-1 bg-brand-500/10 border border-brand-500/30 hover:bg-brand-500/20 text-brand-400 font-bold rounded-lg transition-all text-xs inline-flex items-center gap-1.5">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>Logs (${userLogs.length})</span>
+                                <span class="bg-amber-400/20 text-amber-300 px-1.5 py-0.5 rounded-md text-[10px] font-extrabold border border-amber-400/30 ml-1">★ ${totalPoints}</span>
+                            </button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                }
+            });
+
+            document.getElementById('admin-stat-total').innerText = totalCount;
+            document.getElementById('admin-stat-photos').innerText = photoCount;
+            document.getElementById('admin-stat-online').innerText = activeOnlineCount;
+        }
+
+        function openAdminLogsModal(userId) {
+            window.currentAdminActiveLogUserId = userId;
+            const student = window.contestantDatabase[userId];
+            if (!student) return;
+
+            document.getElementById('admin-logs-student-name').innerText = `${student.name}'s Reading Data`;
+            document.getElementById('admin-logs-student-id').innerText = userId;
+
+            renderAdminLogsList(userId);
+
+            const modal = document.getElementById('admin-logs-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAdminLogsModal() {
+            window.currentAdminActiveLogUserId = null;
+            const modal = document.getElementById('admin-logs-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function renderAdminLogsList(userId) {
+            const container = document.getElementById('admin-logs-container');
+            const userLogs = JSON.parse(localStorage.getItem(`ssf_logs_${userId}`) || "[]");
+
+            const totalPoints = userLogs.reduce((acc, log) => acc + (Number(log.points) || 0), 0);
+            document.getElementById('admin-logs-total-points').innerText = totalPoints;
+
+            if (userLogs.length === 0) {
+                container.innerHTML = `<div class="p-6 text-center text-slate-500 italic">ഈ വിദ്യാർത്ഥി ഇതുവരെ വായനാ വിവരങ്ങൾ ചേർത്തിട്ടില്ല.</div>`;
+                return;
+            }
+
+            container.innerHTML = userLogs.map((log, idx) => `
+                <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-brand-400"><i class="fa-regular fa-calendar mr-1"></i>${log.date || log.timestamp}</span>
+                            <span class="bg-slate-800 px-2 py-0.5 rounded text-slate-300 font-semibold text-[11px]">പേജ്: ${log.pages}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-amber-500/10 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-lg text-[11px] font-bold">
+                                ★ ${log.points || 0} Points
+                            </span>
+                        </div>
+                    </div>
+                    ${log.notes ? `<p class="text-slate-300 text-xs font-medium bg-slate-950/50 p-2 rounded-lg border border-slate-800/80">${log.notes}</p>` : ''}
+                    <div class="flex justify-end items-center gap-2 pt-1 border-t border-slate-800/80">
+                        <button onclick="openAdminEditLogModal('${userId}', ${idx})" class="text-xs text-brand-400 hover:text-brand-300 px-2.5 py-1 rounded bg-brand-500/10 border border-brand-500/20 font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-pen"></i> Edit / Assign Points
+                        </button>
+                        <button onclick="handleAdminDeleteLog('${userId}', ${idx})" class="text-xs text-rose-400 hover:text-rose-300 px-2.5 py-1 rounded bg-rose-500/10 border border-rose-500/20 font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openAdminEditLogModal(userId, logIdx) {
+            const userLogs = JSON.parse(localStorage.getItem(`ssf_logs_${userId}`) || "[]");
+            const log = userLogs[logIdx];
+            if (!log) return;
+
+            document.getElementById('edit-log-student-id').value = userId;
+            document.getElementById('edit-log-index').value = logIdx;
+            document.getElementById('edit-log-date').value = log.date || '';
+            document.getElementById('edit-log-pages').value = log.pages || '';
+            document.getElementById('edit-log-notes').value = log.notes || '';
+            document.getElementById('edit-log-points').value = log.points || 0;
+
+            const modal = document.getElementById('admin-edit-log-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAdminEditLogModal() {
+            const modal = document.getElementById('admin-edit-log-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleAdminSaveLogEdit(e) {
+            e.preventDefault();
+            const userId = document.getElementById('edit-log-student-id').value;
+            const logIdx = parseInt(document.getElementById('edit-log-index').value);
+
+            const userLogs = JSON.parse(localStorage.getItem(`ssf_logs_${userId}`) || "[]");
+            if (!userLogs[logIdx]) return;
+
+            userLogs[logIdx].date = document.getElementById('edit-log-date').value;
+            userLogs[logIdx].pages = document.getElementById('edit-log-pages').value.trim();
+            userLogs[logIdx].notes = document.getElementById('edit-log-notes').value.trim();
+            userLogs[logIdx].points = parseInt(document.getElementById('edit-log-points').value) || 0;
+
+            localStorage.setItem(`ssf_logs_${userId}`, JSON.stringify(userLogs));
+
+            if (window.syncStudentToCloud) {
+                window.syncStudentToCloud(userId, { logs: userLogs });
+            }
+
+            closeAdminEditLogModal();
+            renderAdminLogsList(userId);
+            renderAdminTable();
+        }
+
+        function handleAdminDeleteLog(userId, logIdx) {
+            const userLogs = JSON.parse(localStorage.getItem(`ssf_logs_${userId}`) || "[]");
+            if (!userLogs[logIdx]) return;
+
+            userLogs.splice(logIdx, 1);
+            localStorage.setItem(`ssf_logs_${userId}`, JSON.stringify(userLogs));
+
+            if (window.syncStudentToCloud) {
+                window.syncStudentToCloud(userId, { logs: userLogs });
+            }
+
+            renderAdminLogsList(userId);
+            renderAdminTable();
+        }
+
+        function previewAdminPhoto(id, name, photoUrl) {
+            document.getElementById('modal-user-id').innerText = id;
+            document.getElementById('modal-user-name').innerText = name;
+            document.getElementById('modal-photo-img').src = photoUrl;
+
+            document.getElementById('photo-preview-modal').classList.remove('hidden');
+            document.getElementById('photo-preview-modal').classList.add('flex');
+        }
+
+        function closePhotoModal() {
+            document.getElementById('photo-preview-modal').classList.add('hidden');
+            document.getElementById('photo-preview-modal').classList.remove('flex');
+        }
+
+        window.renderAdminTable = renderAdminTable;
+        window.openAdminLogsModal = openAdminLogsModal;
+        window.openAdminEditLogModal = openAdminEditLogModal;
+        window.closeAdminEditLogModal = closeAdminEditLogModal;
+        window.handleAdminSaveLogEdit = handleAdminSaveLogEdit;
+        window.handleAdminDeleteLog = handleAdminDeleteLog;
+        window.closeAdminLogsModal = closeAdminLogsModal;
+        window.openStudentEditLogModal = openStudentEditLogModal;
+        window.closeStudentEditLogModal = closeStudentEditLogModal;
+        window.handleStudentSaveLogEdit = handleStudentSaveLogEdit;
+        window.handleStudentDeleteLog = handleStudentDeleteLog;
+        window.loadReadingLogs = loadReadingLogs;
+    </script>
 </body>
 </html>
+```
